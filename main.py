@@ -15,7 +15,7 @@ def makeBlogPost(q):
   input_ids = torch.tensor(tokenizer.encode(prompt, return_tensors='pt')).unsqueeze(0)
 
   # Generate text
-  generated = model.generate(input_ids, max_length=6000, pad_token_id=tokenizer.eos_token_id)
+  generated = model.generate(input_ids, max_length=1200, pad_token_id=tokenizer.eos_token_id)
 
   # Decode the generated text
   generated_text = tokenizer.decode(generated[0], skip_special_tokens=True)
